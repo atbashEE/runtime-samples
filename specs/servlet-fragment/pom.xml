@@ -28,40 +28,17 @@
         <relativePath>../pom.xml</relativePath>
     </parent>
 
-    <artifactId>servlet-annotation</artifactId>
-    <packaging>war</packaging>
+    <artifactId>servlet-fragment</artifactId>
+    <packaging>pom</packaging>
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <failOnMissingWebXml>false</failOnMissingWebXml>
+
     </properties>
 
-    <dependencies>
-        <dependency>
-            <groupId>jakarta.platform</groupId>
-            <artifactId>jakarta.jakartaee-web-api</artifactId>
-            <scope>provided</scope>
-        </dependency>
-
-        <dependency>
-            <groupId>be.atbash.runtime.testing</groupId>
-            <artifactId>framework</artifactId>
-            <scope>test</scope>
-        </dependency>
-        <dependency>
-            <groupId>ch.qos.logback</groupId>
-            <artifactId>logback-classic</artifactId>
-            <scope>test</scope>
-        </dependency>
-        <dependency>
-            <groupId>org.junit.jupiter</groupId>
-            <artifactId>junit-jupiter</artifactId>
-            <scope>test</scope>
-        </dependency>
-    </dependencies>
-
-    <build>
-        <finalName>servlet</finalName>
-    </build>
+    <modules>
+        <module>library</module>
+        <module>app</module>
+    </modules>
 </project>
-

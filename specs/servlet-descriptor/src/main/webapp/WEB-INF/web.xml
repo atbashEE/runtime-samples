@@ -1,3 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
 <!--
 
     Copyright 2022 Rudy De Busscher (https://www.atbash.be)
@@ -15,20 +16,18 @@
     limitations under the License.
 
 -->
-<configuration>
-
-    <appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
-        <!-- encoders are assigned the type
-             ch.qos.logback.classic.encoder.PatternLayoutEncoder by default -->
-        <encoder>
-            <pattern>%d{HH:mm:ss.SSS} [%thread] %-5level %logger{36} - %msg%n</pattern>
-        </encoder>
-    </appender>
-
-    <root level="info">
-        <appender-ref ref="STDOUT" />
-    </root>
-    <logger name="be.atbash.runtime.testing" level="DEBUG" additivity="false">
-        <appender-ref ref="STDOUT" />
-    </logger>
-</configuration>
+<web-app xmlns="https://jakarta.ee/xml/ns/jakartaee"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="https://jakarta.ee/xml/ns/jakartaee https://jakarta.ee/xml/ns/jakartaee/web-app_5_0.xsd"
+         version="5.0">
+    
+    <servlet>
+        <servlet-name>registeredServlet</servlet-name>
+        <servlet-class>be.rubus.runtime.examples.servlet.HelloXMLServlet</servlet-class>
+    </servlet>
+    
+    <servlet-mapping>
+        <servlet-name>registeredServlet</servlet-name>
+        <url-pattern>/xml</url-pattern>
+    </servlet-mapping>
+</web-app>

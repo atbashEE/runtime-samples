@@ -28,7 +28,8 @@
         <relativePath>../pom.xml</relativePath>
     </parent>
 
-    <artifactId>servlet-annotation</artifactId>
+
+    <artifactId>servlet-descriptor</artifactId>
     <packaging>war</packaging>
 
     <properties>
@@ -61,7 +62,6 @@
     </dependencies>
 
     <build>
-        <finalName>servlet</finalName>
+        <finalName>servlet-xml</finalName>
     </build>
 </project>
-

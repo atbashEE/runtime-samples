@@ -20,27 +20,25 @@ import be.atbash.runtime.testing.jupiter.AtbashContainerTest;
 import jakarta.ws.rs.client.WebTarget;
 import org.junit.jupiter.api.Test;
 
-import java.io.IOException;
-
 import static org.assertj.core.api.Assertions.assertThat;
 
 @AtbashContainerTest
-public class HelloServletIT extends AbstractAtbashTest {
+public class HelloXMLServletIT extends AbstractAtbashTest {
 
     @Test
     public void testGET() {
 
-        WebTarget path = getClientWebTargetApplication(atbash).path("/world");
+        WebTarget path = getClientWebTargetApplication(atbash).path("/xml");
         String result = path.request().get(String.class);
-        assertThat(result).isEqualTo("Hello World\r\n");
+        assertThat(result).isEqualTo("Hello World from XML\r\n");
 
     }
 
     @Test
     public void testGETWithParameters() {
 
-        WebTarget path = getClientWebTargetApplication(atbash).path("/world").queryParam("name", "Atbash");
+        WebTarget path = getClientWebTargetApplication(atbash).path("/xml").queryParam("name", "Atbash");
         String result = path.request().get(String.class);
-        assertThat(result).isEqualTo("Hello World\r\nRequest parameter values\r\nkey -> name, value -> Atbash\r\n");
+        assertThat(result).isEqualTo("Hello World from XML\r\nRequest parameter values\r\nkey -> name, value -> Atbash\r\n");
     }
 }

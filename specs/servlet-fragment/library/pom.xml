@@ -21,47 +21,27 @@
 
     <modelVersion>4.0.0</modelVersion>
 
+
     <parent>
         <groupId>be.atbash.runtime.samples.specifications</groupId>
-        <artifactId>parent</artifactId>
+        <artifactId>servlet-fragment</artifactId>
         <version>0.3-SNAPSHOT</version>
         <relativePath>../pom.xml</relativePath>
     </parent>
 
-    <artifactId>servlet-annotation</artifactId>
-    <packaging>war</packaging>
-
-    <properties>
-        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <failOnMissingWebXml>false</failOnMissingWebXml>
-    </properties>
+    <artifactId>library-with-fragment</artifactId>
+    <packaging>jar</packaging>
 
     <dependencies>
         <dependency>
             <groupId>jakarta.platform</groupId>
             <artifactId>jakarta.jakartaee-web-api</artifactId>
+            <version>9.1.0</version>
             <scope>provided</scope>
         </dependency>
 
-        <dependency>
-            <groupId>be.atbash.runtime.testing</groupId>
-            <artifactId>framework</artifactId>
-            <scope>test</scope>
-        </dependency>
-        <dependency>
-            <groupId>ch.qos.logback</groupId>
-            <artifactId>logback-classic</artifactId>
-            <scope>test</scope>
-        </dependency>
-        <dependency>
-            <groupId>org.junit.jupiter</groupId>
-            <artifactId>junit-jupiter</artifactId>
-            <scope>test</scope>
-        </dependency>
+
     </dependencies>
 
-    <build>
-        <finalName>servlet</finalName>
-    </build>
-</project>
 
+</project>

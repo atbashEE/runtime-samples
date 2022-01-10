@@ -13,7 +13,15 @@ You can run the tests on JDK 11 by executing the following command within the di
 mvn
 ```
 
-It assumes that you have a JDK 11 active.
+It assumes that you have a JDK 11 active as the test itself is always using JDK 11.
+
+The following command runs the Atbash Runtime within a JDK 17 based Docker container and thus test the specification samples in combination with JDK 17.
+
+
+```
+mvn -Datbash.test.container.jdk=jdk17
+```
+
 
 ### Tests
 

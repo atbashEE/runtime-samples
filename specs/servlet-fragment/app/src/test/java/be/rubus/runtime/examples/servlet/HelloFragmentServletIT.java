@@ -25,22 +25,22 @@ import java.io.IOException;
 import static org.assertj.core.api.Assertions.assertThat;
 
 @AtbashContainerTest
-public class HelloServletIT extends AbstractAtbashTest {
+public class HelloFragmentServletIT extends AbstractAtbashTest {
 
     @Test
     public void testGET() {
 
-        WebTarget path = getClientWebTargetApplication(atbash).path("/world");
+        WebTarget path = getClientWebTargetApplication(atbash).path("/fragment");
         String result = path.request().get(String.class);
-        assertThat(result).isEqualTo("Hello World\r\n");
+        assertThat(result).isEqualTo("Hello World from WebFragment\r\n");
 
     }
 
     @Test
-    public void testGETWithParameters() {
+    public void testGETWithParameters()  {
 
-        WebTarget path = getClientWebTargetApplication(atbash).path("/world").queryParam("name", "Atbash");
+        WebTarget path = getClientWebTargetApplication(atbash).path("/fragment").queryParam("name", "Atbash");
         String result = path.request().get(String.class);
-        assertThat(result).isEqualTo("Hello World\r\nRequest parameter values\r\nkey -> name, value -> Atbash\r\n");
+        assertThat(result).isEqualTo("Hello World from WebFragment\r\nRequest parameter values\r\nkey -> name, value -> Atbash\r\n");
     }
 }

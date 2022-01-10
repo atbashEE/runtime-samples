@@ -97,8 +97,11 @@
             <scope>test</scope>
         </dependency>
     </dependencies>
+
     <modules>
         <module>servlet-annotation</module>
+        <module>servlet-descriptor</module>
+        <module>servlet-fragment</module>
 
     </modules>
 
