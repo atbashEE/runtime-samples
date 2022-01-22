@@ -102,6 +102,7 @@
         <module>servlet-annotation</module>
         <module>servlet-descriptor</module>
         <module>servlet-fragment</module>
+        <module>rest-annotation</module>
 
     </modules>
 
