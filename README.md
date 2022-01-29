@@ -26,3 +26,17 @@ mvn -Datbash.test.container.jdk=jdk17
 ### Tests
 
 -  Servlet defined through Annotation.
+-  Servlet defined through web.xml.
+-  Servlet defined through we fragment
+
+## directory 'tck-checks'
+
+Projects for running TCK tests on Atbash Runtime.
+
+### mp-config
+
+Run the MicroProfile Config TCK tests through the command
+
+```
+mvn integration-test
+```
