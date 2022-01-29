@@ -28,6 +28,10 @@ mvn -Datbash.test.container.jdk=jdk17
 -  Servlet defined through Annotation.
 -  Servlet defined through web.xml.
 -  Servlet defined through we fragment
+-  Servlet with injecting a CDI bean.
+-  JAX-RS resource defined with annotation.
+-  JAX-RS resource with injecting a CDI bean.
+
 
 ## directory 'tck-checks'
 

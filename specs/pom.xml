@@ -102,7 +102,9 @@
         <module>servlet-annotation</module>
         <module>servlet-descriptor</module>
         <module>servlet-fragment</module>
+        <module>servlet-cdi</module>
         <module>rest-annotation</module>
+        <module>rest-cdi</module>
 
     </modules>
 
