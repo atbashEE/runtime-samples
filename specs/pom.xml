@@ -61,6 +61,13 @@
             </dependency>
 
             <dependency>
+                <groupId>org.eclipse.microprofile.config</groupId>
+                <artifactId>microprofile-config-api</artifactId>
+                <version>3.0.1</version>
+                <scope>provided</scope>
+            </dependency>
+
+            <dependency>
                 <groupId>be.atbash.runtime.testing</groupId>
                 <artifactId>framework</artifactId>
                 <version>${runtime.testing.framework.version}</version>
@@ -75,7 +82,7 @@
             <dependency>
                 <groupId>org.junit.jupiter</groupId>
                 <artifactId>junit-jupiter</artifactId>
-                <version>5.8.1</version>
+                <version>${junit.jupiter.version}</version>
             </dependency>
         </dependencies>
     </dependencyManagement>
@@ -105,7 +112,10 @@
         <module>servlet-cdi</module>
         <module>rest-annotation</module>
         <module>rest-cdi</module>
+        <module>rest-json</module>
 
+        <module>mpconfig-basics</module>
+        <module>mpconfig-configproperties</module>
     </modules>
 
     <build>

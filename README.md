@@ -31,6 +31,9 @@ mvn -Datbash.test.container.jdk=jdk17
 -  Servlet with injecting a CDI bean.
 -  JAX-RS resource defined with annotation.
 -  JAX-RS resource with injecting a CDI bean.
+-  JAX-RS resource producing and handling JSON data.
+-  MicroProfile Config Using a Profile, Injected value and Programmatic lookup
+-  MicroProfile Config Using ConfigProperties
 
 
 ## directory 'tck-checks'
