@@ -40,11 +40,23 @@
                 <type>pom</type>
                 <scope>import</scope>
             </dependency>
+
+            <dependency>
+                <groupId>org.slf4j</groupId>
+                <artifactId>slf4j-api</artifactId>
+                <version>2.0.0-alpha1</version>
+            </dependency>
+
         </dependencies>
     </dependencyManagement>
 
-
     <dependencies>
+        <!-- Force slf4j 2.0 version, overruling Arquillian one -->
+        <dependency>
+            <groupId>org.slf4j</groupId>
+            <artifactId>slf4j-simple</artifactId>
+        </dependency>
+
         <dependency>
             <groupId>org.eclipse.microprofile.config</groupId>
             <artifactId>microprofile-config-api</artifactId>
