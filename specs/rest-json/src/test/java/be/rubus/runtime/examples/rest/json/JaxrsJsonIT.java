@@ -32,7 +32,7 @@ public class JaxrsJsonIT extends AbstractAtbashTest {
     public void testAtbash() throws IOException {
 
         String result = getClientWebTargetApplication(atbash).path("/api/person").request().get(String.class);
-        assertThat(result).isEqualTo("{\"age\":42,\"name\":\"Rudy\"}");
+        assertThat(result).isEqualTo("{\"name\":\"Rudy\",\"age\":42}");
 
     }
 
