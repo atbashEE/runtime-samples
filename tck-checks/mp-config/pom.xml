@@ -23,7 +23,7 @@
 
     <groupId>be.atbash.runtime.mp-config</groupId>
     <artifactId>tck-run</artifactId>
-    <version>0.3-SNAPSHOT</version>
+    <version>0.4-SNAPSHOT</version>
     <name>Atbash Runtime MP Config TCK run</name>
     <packaging>jar</packaging>
 
@@ -88,7 +88,7 @@
         <dependency>
             <groupId>be.atbash.runtime.testing</groupId>
             <artifactId>arquillian-atbash-embedded</artifactId>
-            <version>0.3-SNAPSHOT</version>
+            <version>0.4-SNAPSHOT</version>
             <scope>test</scope>
         </dependency>
 

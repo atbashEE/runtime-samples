@@ -18,28 +18,13 @@
 
 mvn clean package
 
-# Skip documentation generation
-
-mvn clean package -Ddocumentation.skip
-
-# Fast artifact generation
-mvn clean install -Ddocumentation.skip -DskipTests
-
-# Skip Docker image creation
-mvn clean install -Ddocker.skip
-
 # Update license header
 mvn license:format
 
-# Check dependencies
- mvn validate -PcheckDependencies
-
-
 # Setting versions
-mvn versions:set -DnewVersion=0.3 -DgenerateBackupPoms=false
+mvn versions:set -DnewVersion=0.4-SNAPSHOT -DgenerateBackupPoms=false
 
-# Run application with defaults
-java -jar target/atbash-runtime.jar <path-to>/<application>.war
+# run all tests for testing spec compliance.
+mvn clean integration-test
 
-# Debug application without leaving a trace on disk
-java -jar '-agentlib:jdwp=transport=dt_socket,server=y,suspend=y,address=*:5005' runtime-main/target/atbash-runtime.jar --stateless --verbose <path-to>/<application>.war
+mvn clean integration-test -Datbash.test.container.jdk=jdk17
