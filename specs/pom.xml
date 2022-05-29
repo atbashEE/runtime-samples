@@ -118,6 +118,8 @@
 
         <module>mpconfig-basics</module>
         <module>mpconfig-configproperties</module>
+        <module>jwt-auth-basics</module>
+        <module>jwt-auth-jwe</module>
     </modules>
 
     <build>

@@ -1,5 +1,6 @@
-====
-    Copyright 2021-2022 Rudy De Busscher (https://www.atbash.be)
+<!--
+
+    Copyright 2022 Rudy De Busscher (https://www.atbash.be)
 
     Licensed under the Apache License, Version 2.0 (the "License");
     you may not use this file except in compliance with the License.
@@ -12,21 +13,11 @@
     WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
     See the License for the specific language governing permissions and
     limitations under the License.
-====
 
-# local development
-
-mvn clean package
-
-# Update license header
-mvn license:format
-
-# Setting versions
-mvn versions:set -DnewVersion=0.4-SNAPSHOT -DgenerateBackupPoms=false
-
-# run all tests for testing spec compliance.
-mvn clean integration-test
-
-mvn clean integration-test -Datbash.test.container.jdk=jdk17
-
-mvn clean integration-test -Datbash.test.container.jdk=jdk18
+-->
+<beans xmlns="https://jakarta.ee/xml/ns/jakartaee"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="https://jakarta.ee/xml/ns/jakartaee
+         https://jakarta.ee/xml/ns/jakartaee/beans_3_0.xsd"
+       version="3.0" bean-discovery-mode="annotated">
+</beans>
