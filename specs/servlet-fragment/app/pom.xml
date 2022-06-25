@@ -40,12 +40,6 @@
         </dependency>
 
         <dependency>
-            <groupId>jakarta.platform</groupId>
-            <artifactId>jakarta.jakartaee-web-api</artifactId>
-            <scope>provided</scope>
-        </dependency>
-
-        <dependency>
             <groupId>be.atbash.runtime.testing</groupId>
             <artifactId>framework</artifactId>
             <scope>test</scope>
@@ -60,6 +54,15 @@
     </dependencies>
     <build>
         <finalName>servlet-fragment</finalName>
+        <plugins>
+            <plugin>
+                <artifactId>maven-war-plugin</artifactId>
+                <version>3.2.3</version>
+                <configuration>
+                    <failOnMissingWebXml>false</failOnMissingWebXml>
+                </configuration>
+            </plugin>
+        </plugins>
     </build>
 
 

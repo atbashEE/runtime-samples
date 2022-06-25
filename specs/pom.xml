@@ -56,16 +56,11 @@
     <dependencyManagement>
         <dependencies>
             <dependency>
-                <groupId>jakarta.platform</groupId>
-                <artifactId>jakarta.jakartaee-web-api</artifactId>
-                <version>9.1.0</version>
-            </dependency>
-
-            <dependency>
-                <groupId>org.eclipse.microprofile.config</groupId>
-                <artifactId>microprofile-config-api</artifactId>
-                <version>3.0.1</version>
-                <scope>provided</scope>
+                <groupId>be.atbash.runtime.api</groupId>
+                <artifactId>bom</artifactId>
+                <version>0.4-SNAPSHOT</version>
+                <scope>import</scope>
+                <type>pom</type>
             </dependency>
 
             <dependency>
@@ -135,6 +130,9 @@
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-war-plugin</artifactId>
                 <version>3.3.2</version>
+                <configuration>
+                    <failOnMissingWebXml>false</failOnMissingWebXml>
+                </configuration>
             </plugin>
             <plugin>
                 <artifactId>maven-failsafe-plugin</artifactId>

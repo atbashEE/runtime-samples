@@ -33,9 +33,18 @@
 
 
     <dependencies>
+
+        <!-- the following artifact also come through a provided scope of Atbash Testing framework
+although scope is defined as test.  Adding them to be sure as this looks like a Maven error -->
         <dependency>
-            <groupId>jakarta.platform</groupId>
-            <artifactId>jakarta.jakartaee-web-api</artifactId>
+            <groupId>jakarta.ws.rs</groupId>
+            <artifactId>jakarta.ws.rs-api</artifactId>
+            <scope>provided</scope>
+        </dependency>
+
+        <dependency>
+            <groupId>jakarta.json</groupId>
+            <artifactId>jakarta.json-api</artifactId>
             <scope>provided</scope>
         </dependency>
 
