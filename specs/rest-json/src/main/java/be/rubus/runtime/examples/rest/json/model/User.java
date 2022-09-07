@@ -13,41 +13,36 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package be.rubus.runtime.examples.rest.json;
+package be.rubus.runtime.examples.rest.json.model;
 
-public class Person {
-    private String name;
-    private int age;
+import jakarta.json.bind.annotation.JsonbTransient;
 
-    public Person() {
+import java.util.ArrayList;
+import java.util.List;
+import java.util.UUID;
+
+public class User extends CreateUser {
+
+    private final String id;
+
+    @JsonbTransient
+    private final List<Book> books = new ArrayList<>();
+
+    public User(String name, String email) {
+        super(name, email);
+        id = UUID.randomUUID().toString();
     }
 
-    public Person(String name, int age) {
-        this.name = name;
-        this.age = age;
+    public String getId() {
+        return id;
     }
 
-    public String getName() {
-        return name;
+
+    public List<Book> getBooks() {
+        return new ArrayList<>(books);
     }
 
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public int getAge() {
-        return age;
-    }
-
-    public void setAge(int age) {
-        this.age = age;
-    }
-
-    @Override
-    public String toString() {
-        return "Person{" +
-                "name='" + name + '\'' +
-                ", age=" + age +
-                '}';
+    public void addBook(Book book) {
+        books.add(book);
     }
 }

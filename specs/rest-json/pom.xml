@@ -49,6 +49,13 @@ although scope is defined as test.  Adding them to be sure as this looks like a 
         </dependency>
 
         <dependency>
+            <groupId>jakarta.json.bind</groupId>
+            <artifactId>jakarta.json.bind-api</artifactId>
+            <scope>provided</scope>
+        </dependency>
+
+
+        <dependency>
             <groupId>be.atbash.runtime.testing</groupId>
             <artifactId>framework</artifactId>
             <scope>test</scope>

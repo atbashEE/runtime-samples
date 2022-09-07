@@ -15,6 +15,7 @@
  */
 package be.rubus.runtime.examples.rest.json;
 
+import be.rubus.runtime.examples.rest.json.model.Person;
 import jakarta.json.Json;
 import jakarta.json.JsonObject;
 import jakarta.json.JsonObjectBuilder;
