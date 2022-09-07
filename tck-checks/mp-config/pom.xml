@@ -88,7 +88,7 @@
         <dependency>
             <groupId>be.atbash.runtime.testing</groupId>
             <artifactId>arquillian-atbash-embedded</artifactId>
-            <version>0.4-SNAPSHOT</version>
+            <version>0.4.1-SNAPSHOT</version>
             <scope>test</scope>
         </dependency>
 
