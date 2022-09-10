@@ -44,7 +44,6 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <failOnMissingWebXml>false</failOnMissingWebXml>
 
-        <junit.jupiter.version>5.8.2</junit.jupiter.version>
         <assertj.version>3.23.1</assertj.version>
         <slf4j.version>2.0.0-alpha6</slf4j.version> <!-- So that it is aligned with the Jetty version -->
         <logback.version>1.3.0-alpha16</logback.version>
@@ -75,23 +74,12 @@
                 <version>${logback.version}</version>
             </dependency>
 
-            <dependency>
-                <groupId>org.junit.jupiter</groupId>
-                <artifactId>junit-jupiter</artifactId>
-                <version>${junit.jupiter.version}</version>
-            </dependency>
         </dependencies>
     </dependencyManagement>
 
     <dependencies>
 
         <!-- testing -->
-        <dependency>
-            <groupId>org.junit.jupiter</groupId>
-            <artifactId>junit-jupiter-engine</artifactId>
-            <version>${junit.jupiter.version}</version>
-            <scope>test</scope>
-        </dependency>
 
         <dependency>
             <groupId>org.assertj</groupId>

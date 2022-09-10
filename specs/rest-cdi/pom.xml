@@ -60,11 +60,7 @@ although scope is defined as test.  Adding them to be sure as this looks like a 
             <artifactId>logback-classic</artifactId>
             <scope>test</scope>
         </dependency>
-        <dependency>
-            <groupId>org.junit.jupiter</groupId>
-            <artifactId>junit-jupiter</artifactId>
-            <scope>test</scope>
-        </dependency>
+
     </dependencies>
 
     <build>
