@@ -15,8 +15,6 @@
  */
 package be.rubus.runtime.examples.jwtauth;
 
-import jakarta.annotation.security.DeclareRoles;
-import jakarta.enterprise.context.ApplicationScoped;
 import jakarta.ws.rs.ApplicationPath;
 import jakarta.ws.rs.core.Application;
 import org.eclipse.microprofile.auth.LoginConfig;
@@ -26,7 +24,6 @@ import org.eclipse.microprofile.auth.LoginConfig;
  */
 //@ApplicationPath("/data")
 @ApplicationPath("/")
-@ApplicationScoped
 
 @LoginConfig(authMethod = "MP-JWT")
 

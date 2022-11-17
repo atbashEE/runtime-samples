@@ -35,6 +35,6 @@ public class TestService {
                 .collect(Collectors.joining(","));
 
         Config config2 = ConfigProvider.getConfig();
-        return String.format("Config Equals %s, properties %s", config2 == config, result);
+        return String.format("Config Equals %s,%s", config2 == config, result);
     }
 }

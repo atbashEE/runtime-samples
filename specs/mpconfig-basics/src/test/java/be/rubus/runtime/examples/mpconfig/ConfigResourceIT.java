@@ -18,6 +18,7 @@ package be.rubus.runtime.examples.mpconfig;
 import be.atbash.runtime.testing.AbstractAtbashTest;
 import be.atbash.runtime.testing.jupiter.AtbashContainerTest;
 import jakarta.ws.rs.client.WebTarget;
+import org.assertj.core.api.Assertions;
 import org.junit.jupiter.api.Test;
 
 import static org.assertj.core.api.Assertions.assertThat;
@@ -30,8 +31,13 @@ public class ConfigResourceIT extends AbstractAtbashTest {
 
         WebTarget path = getClientWebTargetApplication(atbash).path("/data/hello/info");
         String result = path.request().get(String.class);
-        assertThat(result).isEqualTo("Config Equals true, properties PATH,awt.toolkit,java.specification.version,sun.cpu.isalist,sun.jnu.encoding,java.class.path,language,java.vm.vendor,home.dir,ld.library.path,sun.arch.data.model,path,hostname,java.vendor.url,injected.value,user.timezone,LD_LIBRARY_PATH,jvm.args,os.name,java.vm.specification.version,PWD,stateless,sun.java.launcher,user.country,sun.boot.library.path,LANGUAGE,sun.java.command,MEM_MAX_RAM_PERCENTAGE,jdk.debug,mem.max.ram.percentage,sun.cpu.endian,user.home,user.language,shlvl,java.specification.vendor,java.version.date,java.home,file.separator,java.vm.compressedOopsMode,line.separator,HOME_DIR,java.specification.name,java.vm.specification.vendor,jdk.vendor.version,LC_ALL,DEPLOYMENT_DIR,java.awt.graphicsenv,pwd,SHLVL,ATBASH_ARGS,STATELESS,sun.management.compiler,CONFIG_FILE_LOCATION,java.runtime.version,runtime.logging.console,JAVA_HOME,mem.xss,user.name,MEM_XSS,path.separator,LANG,os.version,config.file.location,java.runtime.name,file.encoding,java.vm.name,runtime.logging.file,java.vendor.version,lang,value,java.vendor.url.bug,jetty.git.hash,java.io.tmpdir,java.version,user.dir,os.arch,java.vm.specification.name,atbash.args,java.awt.printerjob,runtime.logging.verbose,sun.os.patch.level,mp.config.profile,home,java.util.logging.manager,java.library.path,java.vm.info,java.vendor,HOSTNAME,java.vm.version,JVM_ARGS,deployment.dir,sun.io.unicode.encoding,java.class.version,HOME,lc.all");
+        String keys = "PATH,awt.toolkit,java.specification.version,sun.cpu.isalist,sun.jnu.encoding,java.class.path,language,java.vm.vendor,home.dir,ld.library.path,sun.arch.data.model,path,hostname,java.vendor.url,injected.value,user.timezone,LD_LIBRARY_PATH,jvm.args,os.name,java.vm.specification.version,PWD,stateless,sun.java.launcher,user.country,sun.boot.library.path,LANGUAGE,sun.java.command,MEM_MAX_RAM_PERCENTAGE,jdk.debug,mem.max.ram.percentage,sun.cpu.endian,user.home,user.language,shlvl,java.specification.vendor,java.version.date,java.home,file.separator,java.vm.compressedOopsMode,line.separator,HOME_DIR,java.specification.name,java.vm.specification.vendor,jdk.vendor.version,LC_ALL,DEPLOYMENT_DIR,java.awt.graphicsenv,pwd,SHLVL,ATBASH_ARGS,STATELESS,sun.management.compiler,CONFIG_FILE_LOCATION,java.runtime.version,runtime.logging.console,JAVA_HOME,mem.xss,user.name,MEM_XSS,path.separator,LANG,os.version,config.file.location,java.runtime.name,file.encoding,java.vm.name,runtime.logging.file,java.vendor.version,lang,value,java.vendor.url.bug,jetty.git.hash,java.io.tmpdir,java.version,user.dir,os.arch,java.vm.specification.name,atbash.args,java.awt.printerjob,runtime.logging.verbose,sun.os.patch.level,mp.config.profile,home,java.util.logging.manager,java.library.path,java.vm.info,java.vendor,HOSTNAME,java.vm.version,JVM_ARGS,deployment.dir,sun.io.unicode.encoding,java.class.version,HOME,lc.all,atbash.config.log.disabled";
 
+        int firstPart = result.indexOf(',');
+        String check = result.substring(0,firstPart);
+        Assertions.assertThat(check).isEqualTo("Config Equals true");
+        String[] foundKeys = result.substring(firstPart + 1).split(",");
+        Assertions.assertThat(foundKeys).containsExactlyInAnyOrder(keys.split(","));
     }
 
     @Test
