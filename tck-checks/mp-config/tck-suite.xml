@@ -26,7 +26,11 @@
 
     <!--test name="Microprofile Config TCK single test">
         <classes>
-            <class name="org.eclipse.microprofile.config.tck.AutoDiscoveredConfigSourceTest"/>
+            <class name="org.eclipse.microprofile.config.tck.ConfigProviderTest">
+            <methods>
+                <include name="testNonExistingConfigKeyGet" />
+            </methods>
+            </class>
         </classes>
     </test-->
 </suite>

@@ -7,8 +7,9 @@
 
     <container qualifier="atbash" default="true">
         <configuration>
-            <property name="keepArchive">false</property>
-            <property name="profile">all</property>
+            <property name="keepArchive">true</property>
+            <!--property name="profile">all</property-->
+            <property name="modules">+mp-jwt</property>
         </configuration>
     </container>
 
