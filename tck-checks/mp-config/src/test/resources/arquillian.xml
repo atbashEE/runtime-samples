@@ -8,6 +8,7 @@
     <container qualifier="atbash" default="true">
         <configuration>
             <property name="keepArchive">false</property>
+            <property name="useOldCDIDiscoveryMode">true</property>
         </configuration>
     </container>
 
